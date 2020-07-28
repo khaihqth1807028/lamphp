@@ -65,7 +65,7 @@
                 <div class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x69;&#x6E;&#x65;&#x72;"><ul class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;">
                         <li class="disabled"><a href="#">Trang</a></li>
                         <?php for($i = 1; $i <= $numPage; $i++): ?>
-                            <li><a href="index.php?controller=Products&action=SearchPrice&price=<?php echo $_GET['price'] ?>&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                            <li><a href="index.php?controller=Products&action=Search&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
                         <?php endfor; ?>
                     </ul></div>
             </div>
@@ -157,18 +157,18 @@
                 <div class="information-blocks">
                     <div class="block-title size-2">Sort by sizes</div>
                     <div class="range-wrapper">
-<!--                        <form action="index.php?controller=Products&action=Search&price=--><?php //echo $price=isset($_POST['price'])?$_POST['price'] : "" ?><!--" method="post">-->
+                        <!--                        <form action="index.php?controller=Products&action=Search&price=--><?php //echo $price=isset($_POST['price'])?$_POST['price'] : "" ?><!--" method="post">-->
 
-                            Price:<br>
-                            <input style="background: #dddddd;width: 60%" type="range" id="price" name="price" min="0" max="5000000">
-                            <div class="range-price" style="width: 66%;">
+                        Price:<br>
+                        <input style="background: #dddddd;width: 60%" type="range" id="price" name="price" min="0" max="5000000">
+                        <div class="range-price" style="width: 66%;">
 
-                                <div class="min-price" style="margin-right: 106px;: "><b><span><?php echo $starPrice =0?></span></b></div>
+                            <div class="min-price" style="margin-right: 106px;: "><b><span><?php echo $starPrice =0?></span></b></div>
 
-                                <div class="max-price" style="float: right;"><b><span>5tr</span></b></div>
-                            </div>
-                            <button onclick="location.href = 'index.php?controller=Products&action=SearchPrice&price=' + document.getElementById('price').value; " class="button style-14">filter</button>
-<!--                        </form>     -->
+                            <div class="max-price" style="float: right;"><b><span>5tr</span></b></div>
+                        </div>
+                        <button onclick="location.href = 'index.php?controller=Products&action=SearchPrice&price=' + document.getElementById('price').value; " class="button style-14">filter</button>
+                        <!--                        </form>     -->
                     </div>
                 </div>
 

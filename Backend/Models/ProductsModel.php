@@ -193,22 +193,47 @@ echo $category_id;
         $listRecord = $query->fetchAll();
         return $listRecord;
     }
-    //danh sach danh muc con
-    public function modelListParameterSub($category_id){
-        //--
+    public function modelListParameterNoCheck($parameter){
+        $product_id =isset( $_GET['product_id'])? $_GET['product_id']:0;
         //lay bien ket noi
         $conn = Connection::getInstall();
         //thuc hien truy van
-        $query = $conn->query("select * from parameters where parent_id=$category_id order by id desc");
+        $query = $conn->query("select * from parameters where id Not in (select parameter_id from product_parameters where product_id=$product_id) && parent_id =$parameter order by id desc");
+        //lay nhieu ban ghi
+
+        $listRecord = $query->fetchAll();
+        return $listRecord;
+    }
+    //danh sach danh muc con
+    public function modelListParameterSub($parameter){
+        //--
+
+        $product_id =isset( $_GET['product_id'])? $_GET['product_id']:0;
+        //lay bien ket noi
+        $conn = Connection::getInstall();
+        //thuc hien truy van
+        $query = $conn->query("select * from parameters where id in (select parameter_id from product_parameters where product_id=$product_id) && parent_id=$parameter  order by id desc");
         //lay nhieu ban ghi
         $listRecord = $query->fetchAll();
         return $listRecord;
     }
     public function modelAddParameter(){
         $product_id = isset($_GET["product_id"])&&is_numeric($_GET["product_id"]) ? $_GET["product_id"] : 0;
-        $para_id = $_POST["para_id"];
+        echo "<pre>";
+        $para_id = isset($_POST["para_id"])?$_POST["para_id"]:'';
+        echo "</pre>";
        $conn = Connection::getInstall();
-        $query = $conn->query("insert into product_parameters set product_id=$product_id,parameter_id=$para_id");
+       if ($para_id != null){
+           for ($i = 0 ;$i<count($para_id) ; $i++){
+               $query = $conn->query("insert into product_parameters set product_id=$product_id,parameter_id=$para_id[$i]");
+
+           }
+       }
+       else{
+           echo "<script>alert('bạn đã dùng hết thuộc tính');
+</script>";
+       }
+
 
     }
       public function checkboxModel(){

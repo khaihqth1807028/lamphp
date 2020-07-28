@@ -53,9 +53,9 @@
                             <div class="col-md-3 col-md-push-9">
 
                                 <script type="text/javascript">
-                                    function searchProducts() {
+                                    function search() {
                                         key = document.getElementById("key").value;
-                                         location.href = "index.php?controller=Products&action=Search&key=" + key;
+                                        location.href = "index.php?controller=Products&action=Search&key=" + key;
                                         return false;
                                     }
                                     function searchForm(event) {
@@ -67,14 +67,7 @@
                                         }
                                         return false;
                                     }
-                                    function ajaxSearch(){
-                                        var key = document.getElementById("key").value;
-                                        if(key != ""){
-                                            document.getElementById("ajax-search").setAttribute("style","display:block");
-                                        }else{
-                                            document.getElementById("ajax-search").setAttribute("style","display:none");
-                                        }
-                                    }
+
                                 </script>
                                 <!--<form method="post" id="frm" action="">-->
                                 <style type="text/css">
@@ -102,6 +95,25 @@
                             </div>
                         </div>
                     </div>
+                    <script>
+                        function ajaxSearch(){
+                            var key = document.getElementById("key").value;
+                            if(key != ""){
+                                $.ajax({
+                                    url: "ajax.php?key="+key,
+                                    success: function( result ) {
+                                        $("#ajax-search").empty();
+                                        $("#ajax-search").append(result);
+                                    }
+                                });
+                                document.getElementById("ajax-search").setAttribute("style","display:block");
+
+                            }else{
+                                document.getElementById("ajax-search").setAttribute("style","display:none");
+
+                            }
+                        }
+                    </script>
                     <div class="nav-overflow">
                         <nav>
                             <ul>

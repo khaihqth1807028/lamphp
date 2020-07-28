@@ -1,8 +1,14 @@
 <div class="content-push">
 
     <div class="breadcrumb-box">
-        <a href="#">Home</a>
-        <a href="#">Bags &amp; Accessories</a>
+        <a href="index.php">Home</a>
+        <a href="index.php?controller=Products&action=Search&key=">Products</a>
+        <?php $record= $this->categoriesNameDetailParent($_GET['category_id']) ?>
+        <a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo  $record->id ?>"><?php   echo $record->name ?></a>
+        <a href="index.php?controller=Products&action=ProductCategory&category_id=<?php echo $_GET['category_id'] ?>"><?php
+            $record =$this->categoriesNameDetail($_GET['category_id']);
+            echo  $record->name;
+            ?></a>
     </div>
 
     <div class="information-blocks">
@@ -21,6 +27,7 @@
                             <div class="inline-text">Sorty by</div>
                             <div class="simple-drop-down" >
                                 <select onchange="location.href ='index.php?controller=Products&action=ProductCategory&category_id=<?php echo $category_id ?>&orderBy='+this.value;">
+                                    <option selected></option>
                                     <option value="priceTang">Price +</option>
                                     <option value="A-Z">A-Z</option>
                                     <option value="Z-A">Z-A</option>
@@ -37,6 +44,7 @@
                             <div class="inline-text">Price</div>
                             <div class="simple-drop-down" style="width: 75px;">
                                 <select  onchange="location.href ='index.php?controller=Products&action=ProductCategory&category_id=<?php echo $category_id ?>&groupPrice='+this.value;">
+                                    <option selected></option>
                                     <option value="100-400">100.000 -> 400.000</option>
                                     <option value="400-800">400.000->800.000</option>
                                     <option value="800-1200">800.000->1.200.000</option>
@@ -65,12 +73,12 @@
                             <a class="tag" href="#">MANGO</a>
                             <a class="title" href="index.php?controller=products&action=ProductDetail&id=<?php echo $item->id ?>"><?php echo $item->name ?></a>
                             <div class="rating-box">
-                                <div class="star"><i class="fa fa-star"></i></div>
-                                <div class="star"><i class="fa fa-star"></i></div>
-                                <div class="star"><i class="fa fa-star"></i></div>
-                                <div class="star"><i class="fa fa-star"></i></div>
-                                <div class="star"><i class="fa fa-star"></i></div>
-                                <div class="reviews-number">25 reviews</div>
+<!--                                <div class="star"><i class="fa fa-star"></i></div>-->
+<!--                                <div class="star"><i class="fa fa-star"></i></div>-->
+<!--                                <div class="star"><i class="fa fa-star"></i></div>-->
+<!--                                <div class="star"><i class="fa fa-star"></i></div>-->
+<!--                                <div class="star"><i class="fa fa-star"></i></div>-->
+<!--                                <div class="reviews-number">25 reviews</div>-->
                             </div>
                             <div class="article-container style-1">
                                 <p><?php echo $item->description?></p>
@@ -195,17 +203,18 @@
                 <div class="information-blocks">
                     <div class="block-title size-2">Sort by sizes</div>
                     <div class="range-wrapper">
-                        <form action="index.php?controller=Products&action=ProductCategory&category_id=<?php echo $category_id ?>" method="post">
-                        <div id="prices-range" >
+                        <!--                        <form action="index.php?controller=Products&action=Search&price=--><?php //echo $price=isset($_POST['price'])?$_POST['price'] : "" ?><!--" method="post">-->
+
+                        Price:<br>
+                        <input style="background: #dddddd;width: 60%" type="range" id="price" name="price" min="0" max="5000000">
+                        <div class="range-price" style="width: 66%;">
+
+                            <div class="min-price" style="margin-right: 106px;: "><b><span><?php echo $starPrice =0?></span></b></div>
+
+                            <div class="max-price" style="float: right;"><b><span>5tr</span></b></div>
                         </div>
-                        <div class="range-price">
-                            Price:
-                            <div class="min-price"><b>&pound;<span><?php echo $starPrice =0?></span></b></div>
-                            <b>-</b>
-                            <div class="max-price"><b>&pound;<span><?php  echo $endPrice =200?></span></b></div>
-                        </div>
-                        <button class="button style-14">filter</button>
-                        </form>
+                        <button onclick="location.href = 'index.php?controller=Products&action=SearchPrice&price=' + document.getElementById('price').value; " class="button style-14">filter</button>
+                        <!--                        </form>     -->
                     </div>
                 </div>
 

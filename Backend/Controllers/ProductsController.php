@@ -33,7 +33,7 @@ class ProductsController extends ProductsModel {
     public function createPost(){
         $this->createProduct();
        echo "<script>alert('Thêm Product thành công')</script>";
-   //    echo "<script>location.href='index.php?controller=Products&action=index'</script>";
+       echo "<script>location.href='index.php?controller=Products&action=index'</script>";
     }
     public function edit(){
         $id = isset($_GET["id"])&&is_numeric($_GET["id"])? $_GET["id"] :0;
@@ -96,6 +96,7 @@ class ProductsController extends ProductsModel {
         //goi ham modelUpdate de update ban ghi
         $this->modelAddParameter($product_id);
         echo "<script>location.href='index.php?controller=products&action=parameters&product_id=$product_id';</script>";
+//
     }
 public function checkbox(){
     $this->checkboxModel();

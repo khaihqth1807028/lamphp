@@ -13,5 +13,6 @@ if (isset($_SESSION['username']) == false){
         include_once "Views/LayoutLogin.php";
 }
 else{
-include_once "Views/Layout.php";
+    include_once "Views/Layout.php";
 }
+

@@ -23,7 +23,7 @@ class ParametersController extends parametersModel {
     public function createPost(){
         $this->createparameters();
         echo "<script>alert('Thêm parameters thành công')</script>";
-//        echo "<script>location.href='index.php?controller=parameters&action=index'</script>";
+        echo "<script>location.href='index.php?controller=parameters&action=index'</script>";
     }
     public function edit(){
         $id = isset($_GET["id"])&&is_numeric($_GET["id"])? $_GET["id"] :0;

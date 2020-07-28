@@ -12,12 +12,14 @@
     <link href="../Assets/Backend/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="../Assets/Backend/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="../Assets/Backend/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck for checkboxes and radio inputs -->
     <link href="../Assets/Backend/css/iCheck/minimal/blue.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="../Assets/Backend/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,6 +29,13 @@
     <![endif]-->
 </head>
 <body class="skin-black">
+
+
+
+
+
+
+
 <!-- header logo: style can be found in header.less -->
 <header class="header">
     <a href="../Assets/Backend/index.html" class="logo">
@@ -393,6 +402,8 @@
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
+
+
 
 <!-- COMPOSE MESSAGE MODAL -->
 <!-- jQuery 2.0.2 -->

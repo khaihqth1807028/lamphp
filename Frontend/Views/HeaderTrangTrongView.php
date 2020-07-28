@@ -5,7 +5,7 @@
 
             <?php
             foreach ($list as $item) :?>
-            <li><a href="index.php?controller=Products&action=ProductCategory&category_id=<?php echo $item->id ?>"><i class="fa fa-angle-right"></i><?php echo $item->name ?></a></li>
+            <li><a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $item->id ?>"><i class="fa fa-angle-right"></i><?php echo $item->name ?></a></li>
             <?php $listSub = $this->showListCategoriesSub($item->id) ;
                 foreach ($listSub as $itemSub) :
                 ?>

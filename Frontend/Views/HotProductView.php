@@ -15,7 +15,7 @@
                                     <a class="bottom-line-a"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                 </div>
                             </div>
-                            <a class="title" href="#"><?php echo $rows->name ?></a>
+                            <a class="title" href="index.php?controller=Products&action=ProductDetail&id=<?php echo $rows->id ?>"><?php echo $rows->name ?></a>
                             <a class="tag" href="#"><?php echo $rows->content ?></a>
                             <div class="rating-box">
                                 <div class="star"><i class="fa fa-star"></i></div>

@@ -1,11 +1,18 @@
 <div class="content-push">
 
     <div class="breadcrumb-box">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">T-shirts</a>
-        <a href="#">Careers</a>
-        <a href="#">T-shirt Stampata</a>
+        <a href="index.php">Home</a>
+        <a href="index.php?controller=Products&action=Search&key=">Products</a>
+        <?php   $record =$this->categoriesNameDetailParent($result->category_id); ?>
+        <a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $record->id?>"><?php
+            echo  $record->name;
+            ?></a>
+        <a href="index.php?controller=Products&action=ProductCategory&category_id=<?php echo $result->category_id?>"><?php
+            $record =$this->categoriesNameDetail($result->category_id);
+            echo  $record->name;
+            ?></a>
+        <a href="index.php?controller=Products&action=ProductDetail&id=<?php echo $result->id ?>"><?php echo $result->name ?></a>
+
     </div>
 
     <div class="information-blocks">
@@ -26,6 +33,7 @@
                             <div class="move-box">
                                 <img class="default-image" src="img/product-main-1.jpg" alt="" />
                                 <img class="zoomed-image" src="img/product-main-1-zoom.jpg" alt="" />
+
                             </div>
                             <div class="zoom-area"></div>
                         </div>
@@ -38,12 +46,28 @@
                     <h1 class="product-title"><?php echo $result->name?></h1>
                     <h3 class="product-subtitle"><?php  ?></h3>
                     <div class="rating-box">
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star-o"></i></div>
-                        <div class="star"><i class="fa fa-star-o"></i></div>
-                        <div class="rating-number">25 Reviews</div>
+                        <table style="width: 200px;">
+                            <tr>
+                                <td style="width: 10px;">*</td>
+                                <td style="text-align: right;">1</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10px;">**</td>
+                                <td style="text-align: right;">1</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10px;">***</td>
+                                <td style="text-align: right;">1</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10px;">****</td>
+                                <td style="text-align: right;">1</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10px;">*****</td>
+                                <td style="text-align: right;">1</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="product-description detail-info-entry"><?php echo $result->content?></div>
                     <div class="price detail-info-entry">

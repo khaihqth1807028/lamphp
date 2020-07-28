@@ -1,17 +1,61 @@
+
 <div class="content-push">
 
     <div class="breadcrumb-box">
         <a href="index.php">Home</a>
-        <a href="index.php?controller=Products&action=Search"><?php echo "Product" ?> </a>
+        <a href="index.php?controller=Products&action=Search&key=">Products</a>
+        <?php $record= $this->categoriesNameParent($_GET['category_id']) ?>
+        <a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo  $record->id ?>"><?php   echo $record->name ?></a>
+
     </div>
 
     <div class="information-blocks">
         <div class="row">
             <div class="col-md-9 col-md-push-3 col-sm-8 col-sm-push-4">
+                <div class="page-selector">
+                    <div class="pages-box hidden-xs">
+                        <a href="#" class="square-button active">1</a>
+                        <a href="#" class="square-button">2</a>
+                        <a href="#" class="square-button">3</a>
+                        <div class="divider">...</div>
+                        <a href="#" class="square-button"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div class="shop-grid-controls">
+                        <div class="entry">
+                            <div class="inline-text">Sorty by</div>
+                            <div class="simple-drop-down" >
+                                <select onchange="location.href ='index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $category_id ?>&orderBy='+this.value;">
+                                   <option selected> </option>
+                                    <option value="priceTang">Price +</option>
+                                    <option value="A-Z">A-Z</option>
+                                    <option value="Z-A">Z-A</option>
+                                    <option value="priceGiam">Price -</option>
+                                </select>
+                            </div>
 
+                        </div>
+                        <div class="entry">
+                            <div class="view-button active grid"><i class="fa fa-th"></i></div>
+                            <div class="view-button list"><i class="fa fa-list"></i></div>
+                        </div>
+                        <div class="entry">
+                            <div class="inline-text">Price</div>
+                            <div class="simple-drop-down" style="width: 75px;">
+                                <select  onchange="location.href ='index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $category_id ?>&groupPrice='+this.value;">
+                                    <option selected> </option>
+                                    <option value="100-400">100.000 -> 400.000</option>
+                                    <option value="400-800">400.000->800.000</option>
+                                    <option value="800-1200">800.000->1.200.000</option>
+                                </select>
+                            </div>
+                            <div class="inline-text">per page</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
                 <div class="row shop-grid grid-view">
 
-                    <?php  foreach($listRecord as $item): ?>
+                    <?php  foreach($listCategories as $item): ?>
                         <div class="col-md-3 col-sm-4 shop-grid-item">
                             <div class="product-slide-entry shift-image">
                                 <div class="product-image">
@@ -27,12 +71,6 @@
                                 <a class="tag" href="#">MANGO</a>
                                 <a class="title" href="index.php?controller=products&action=ProductDetail&id=<?php echo $item->id ?>"><?php echo $item->name ?></a>
                                 <div class="rating-box">
-                                    <div class="star"><i class="fa fa-star"></i></div>
-                                    <div class="star"><i class="fa fa-star"></i></div>
-                                    <div class="star"><i class="fa fa-star"></i></div>
-                                    <div class="star"><i class="fa fa-star"></i></div>
-                                    <div class="star"><i class="fa fa-star"></i></div>
-                                    <div class="reviews-number">25 reviews</div>
                                 </div>
                                 <div class="article-container style-1">
                                     <p><?php echo $item->description?></p>
@@ -50,22 +88,12 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <!--                <div class="page-selector">-->
-                <!--                    <div class="description">Showing: 1-3 of 16</div>-->
-                <!--                    <div class="pages-box">-->
-                <!--                        <a href="#" class="square-button active">1</a>-->
-                <!--                        <a href="#" class="square-button">2</a>-->
-                <!--                        <a href="#" class="square-button">3</a>-->
-                <!--                        <div class="divider">...</div>-->
-                <!--                        <a href="#" class="square-button"><i class="fa fa-angle-right"></i></a>-->
-                <!--                    </div>-->
-                <!--                    <div class="clear"></div>-->
-                <!--                </div>-->
+
                 <div style="clear: both;"></div>
                 <div class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x69;&#x6E;&#x65;&#x72;"><ul class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;">
                         <li class="disabled"><a href="#">Trang</a></li>
                         <?php for($i = 1; $i <= $numPage; $i++): ?>
-                            <li><a href="index.php?controller=Products&action=SearchPrice&price=<?php echo $_GET['price'] ?>&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                            <li><a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $_GET['category_id'] ?>&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
                         <?php endfor; ?>
                     </ul></div>
             </div>
@@ -73,81 +101,15 @@
                 <div class="information-blocks categories-border-wrapper">
                     <div class="block-title size-3">Categories</div>
                     <div class="accordeon">
-                        <div class="accordeon-title">Bags &amp; Accessories</div>
+                        <div class="accordeon-title"></div>
                         <div class="accordeon-entry">
                             <div class="article-container style-1">
                                 <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Man's Products</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Woman's Products</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Top Brands</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Special Offer</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Leather's Products</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
+                                  <?php
+                                  include_once "Controller/LeftCateController.php";
+                                  $obj = new LeftCateController();
+                                  $obj->listLeftCate();
+                                  ?>
                                 </ul>
                             </div>
                         </div>
@@ -155,20 +117,20 @@
                 </div>
 
                 <div class="information-blocks">
-                    <div class="block-title size-2">Sort by sizes</div>
+                    <div class="block-title size-2">Sort Products by sizes</div>
                     <div class="range-wrapper">
-<!--                        <form action="index.php?controller=Products&action=Search&price=--><?php //echo $price=isset($_POST['price'])?$_POST['price'] : "" ?><!--" method="post">-->
+                        <!--                        <form action="index.php?controller=Products&action=Search&price=--><?php //echo $price=isset($_POST['price'])?$_POST['price'] : "" ?><!--" method="post">-->
 
-                            Price:<br>
-                            <input style="background: #dddddd;width: 60%" type="range" id="price" name="price" min="0" max="5000000">
-                            <div class="range-price" style="width: 66%;">
+                        Price:<br>
+                        <input style="background: #dddddd;width: 60%" type="range" id="price" name="price" min="0" max="5000000">
+                        <div class="range-price" style="width: 66%;">
 
-                                <div class="min-price" style="margin-right: 106px;: "><b><span><?php echo $starPrice =0?></span></b></div>
+                            <div class="min-price" style="margin-right: 106px;: "><b><span><?php echo $starPrice =0?></span></b></div>
 
-                                <div class="max-price" style="float: right;"><b><span>5tr</span></b></div>
-                            </div>
-                            <button onclick="location.href = 'index.php?controller=Products&action=SearchPrice&price=' + document.getElementById('price').value; " class="button style-14">filter</button>
-<!--                        </form>     -->
+                            <div class="max-price" style="float: right;"><b><span>5tr</span></b></div>
+                        </div>
+                        <button onclick="location.href = 'index.php?controller=Products&action=SearchPrice&price=' + document.getElementById('price').value; " class="button style-14">filter</button>
+                        <!--                        </form>     -->
                     </div>
                 </div>
 

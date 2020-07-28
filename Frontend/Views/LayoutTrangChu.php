@@ -604,7 +604,7 @@ include_once "Views/Header.php";
     <form>
         <div class="search-button">
             <i class="fa fa-search"></i>
-            <input type="submit" onclick="return search();" />
+<!--            <input type="submit" onclick="return search();" />-->
         </div>
         <div class="search-drop-down">
             <div class="title"><span>All categories</span><i class="fa fa-angle-down"></i></div>
@@ -622,31 +622,7 @@ include_once "Views/Header.php";
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            function search() {
-                key = document.getElementById("key").value;
-                location.href = "/Product/Search?key=" + key;
-                return false;
-            }
-            function searchForm(event) {
-                //neu keypress la enter
-                if (event.keyCode == 13) {
-                    key = document.getElementById("key").value;
-                    //alert(key);
-                    location.href = "/Product/Search?key=" + key;
-                }
-                return false;
-            }
-            function ajaxSearch(){
-                var key = document.getElementById("key").value;
-                if(key != ""){
-                    document.getElementById("ajax-search").setAttribute("style","display:block");
-                }else{
-                    document.getElementById("ajax-search").setAttribute("style","display:block");
-                }
-            }
-        </script>
-        <!--<form method="post" id="frm" action="">-->
+
         <style type="text/css">
             #box-search{
                 position: relative;
@@ -655,14 +631,7 @@ include_once "Views/Header.php";
             #box-search img{width: 70px;}
             #box-search ul li{border-bottom: 1px solid #dddddd;}
         </style>
-        <div class="search-field">
-            <input type="text"  onkeyup="ajaxSearch();" onkeypress="searchForm(event);" value="" placeholder="Search for product" />
-            <ul id="ajax-search">
-                <li><a href="#"><img src="../Assets/Upload/Products/1595012825NIKEAIR.jpg"> Iphone XS Max</a></li>
-                <li><a href="#"><img src="../Assets/Upload/Products/1595012825NIKEAIR.jpg"> Iphone XS Max</a></li>
-                <li><a href="#"><img src="../Assets/Upload/Products/1595012825NIKEAIR.jpg"> Iphone XS Max</a></li>
-            </ul>
-        </div>
+
     </form>
 </div>
 

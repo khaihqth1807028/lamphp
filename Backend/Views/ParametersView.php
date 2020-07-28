@@ -39,7 +39,6 @@
        <?php
 
        $listSubRecord = $this->ModelReadSub($item->id);
-       print_r($listSubRecord) ;
            ?>
        <?php foreach ($listSubRecord as $rowSub): ?>
  <tr>

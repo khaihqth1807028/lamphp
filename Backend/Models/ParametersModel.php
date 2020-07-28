@@ -20,8 +20,8 @@ class parametersModel{
     public function createparameters(){
         $name = $_POST["name"];
         $parent_id=$_POST["parent_id"];
-        $status=$_POST["status"];
-echo $parent_id;
+        $status=1;
+
         $conn = Connection::getInstall();
         $query = $conn->prepare("insert into parameters set name=:name , parent_id=:parent_id , status=:status");
         $query->execute(array("name"=>$name,"parent_id"=>$parent_id,"status"=>$status,));

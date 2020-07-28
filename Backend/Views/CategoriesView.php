@@ -6,7 +6,6 @@
         <th scope="col">Id</th>
         <th scope="col">Name</th>
 <!--        <th scope="col">Password</th>-->
-        <th scope="col">Parent_ID</th>
         <th scope="col">Status</th>
 
         <th scope="col">Action</th>
@@ -21,8 +20,6 @@
         <tr>
            <th><?php echo $item->id; ?></th>
            <td><?php echo $item->name; ?></td>
-           <td><?php echo $item->parent_id; ?></td>
-         
            <?php if ($item->status==1):?>
             <td><a href="index.php?controller=categories&action=delete&id=<?php echo $item->id ?>"><b style="color: blue;">Active</b></a></td>
             <?php else: ?>
@@ -38,14 +35,13 @@
        <?php
 
        $listSubRecord = $this->ModelReadSub($item->id);
-       print_r($listSubRecord) ;
            ?>
        <?php foreach ($listSubRecord as $rowSub): ?>
  <tr>
            <th ><?php echo $rowSub->id; ?></th>
            <td style="padding-left: 35px;"><?php echo $rowSub->name; ?></td>
-           <td><?php echo $rowSub->parent_id; ?></td>
-         
+
+
            <?php if ($rowSub->status==1):?>
             <td><a href="index.php?controller=categories&action=delete&id=<?php echo $rowSub->id; ?>"><b style="color: blue;">Active</b></a></td>
             <?php else: ?>

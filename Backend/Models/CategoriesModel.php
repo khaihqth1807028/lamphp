@@ -70,7 +70,7 @@ class categoriesModel{
     }
     public function ModelReadDropDownCategory(){
         $conn = Connection::getInstall();
-        $query =$conn->query("select * from categories where parent_id = 0 order by id desc ");
+        $query =$conn->query("select * from categories where parent_id = 0 && status=1 order by id desc ");
         $result = $query->fetchAll();
         return $result;
     }

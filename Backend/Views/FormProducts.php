@@ -29,7 +29,7 @@ span.span{
                             $category = $this->modelListCategory();
                             ?>
                             <?php foreach($category as $rows): ?>
-                                <option <?php if(isset($record->category_id)&&$record->category_id==$rows->id): ?> selected <?php endif; ?> value="<?php echo $rows->id;?>"><?php echo $rows->name; ?></option>
+                                <option style="background: black;color: white;"  disabled="disabled"<?php if(isset($record->category_id)&&$record->category_id==$rows->id): ?>  <?php endif; ?> value="<?php echo $rows->id;?>"><?php echo $rows->name; ?></option>
                                 <?php
                                 //lay danh muc cap con
                                 $categorySub = $this->modelListCategorySub($rows->id);

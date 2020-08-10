@@ -14,6 +14,7 @@ class ProductsController extends ProductsModel{
 
         include "Views/ProductsCategory.php";
     }
+
     public function CategoryProduct(){
         $recordPerPage = 2;
         $category_id =isset($_GET['category_id'])? $_GET['category_id'] : "";
@@ -49,17 +50,16 @@ class ProductsController extends ProductsModel{
 
         include "Views/ProductDetail.php";
     }
-    public function ProductAll(){
-        $recordPerPage = 1;
+public function SearchPara(){
+    $recordPerPage = 6;
+    $para_id=isset($_GET['parameterId'])? $_GET['parameterId'] :"";
+    //tinh so trang
+    $numPage = ceil($this->totalRecordProductParameter($para_id)/$recordPerPage);
 
-        //tinh so trang
-        $numPage = ceil($this->totalRecoreProducts($recordPerPage));
-        //goi ham ModelRead tu class ProductsModel de lay ket qua
+        $listProductParameter=  $this->ProductParameter();
+        include "Views/ProductParameter.php";
+}
 
-        $list = $this->allProducts($recordPerPage);
-
-        include "Views/ProductsCategory.php";
-    }
 }
 
 

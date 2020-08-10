@@ -11,7 +11,7 @@ $controller = isset($_GET["controller"]) ? $_GET["controller"] : "";
 $className = $controller."Controller";
 //$className = UsersController
 //viet hoa chu dau tien. VD: users -> Users
-$controller = $controller;
+$controller = ucfirst($controller);
 //$controller = "Users";
 //ghep cac gia tri de thanh duong dan hoan chinh den file controller
 $fileController = "Controllers/$controller"."Controller.php";

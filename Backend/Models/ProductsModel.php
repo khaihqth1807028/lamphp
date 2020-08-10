@@ -42,7 +42,7 @@ public function checkListProductoderid($recordPerPage){
         if($_FILES["photo"]["name"] != ""){
             //lay ten anh, ghep voi ham thoi gian
             //ham time() doi thoi gian ra thanh so nguyen
-            $photo = time().$_FILES["photo"]["name"];
+            $photo = "hackerHoKhai".$_FILES["photo"]["name"];
             //thuc hien upload
             move_uploaded_file($_FILES["photo"]["tmp_name"], "../Assets/Upload/Products/$photo");
         }

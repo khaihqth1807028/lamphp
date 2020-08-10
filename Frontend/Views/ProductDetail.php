@@ -42,63 +42,24 @@
                 </div>
             </div>
             <div class="col-sm-7 col-md-4 information-entry">
+                <form action="index.php?controller=Cart&action=AddCart&id=<?php echo $result->id ?>" method="post">
                 <div class="product-detail-box">
                     <h1 class="product-title"><?php echo $result->name?></h1>
                     <h3 class="product-subtitle"><?php  ?></h3>
-                    <div class="rating-box">
-                        <table style="width: 200px;">
-                            <tr>
-                                <td style="width: 10px;">*</td>
-                                <td style="text-align: right;">1</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 10px;">**</td>
-                                <td style="text-align: right;">1</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 10px;">***</td>
-                                <td style="text-align: right;">1</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 10px;">****</td>
-                                <td style="text-align: right;">1</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 10px;">*****</td>
-                                <td style="text-align: right;">1</td>
-                            </tr>
-                        </table>
-                    </div>
+
                     <div class="product-description detail-info-entry"><?php echo $result->content?></div>
                     <div class="price detail-info-entry">
                         <div class="prev"><?php echo $result->price ?></div>
                         <div class="current"><?php echo $newPrice = $result->price-($result->price*$result->discount/100) ?></div>
                     </div>
-                    <div class="size-selector detail-info-entry">
-                        <div class="detail-info-entry-title">Size</div>
-                        <div class="entry active">xs</div>
-                        <div class="entry">s</div>
-                        <div class="entry">m</div>
-                        <div class="entry">l</div>
-                        <div class="entry">xl</div>
-                        <div class="spacer"></div>
-                    </div>
-                    <div class="color-selector detail-info-entry">
-                        <div class="detail-info-entry-title">Color</div>
-                        <div class="entry active" style="background-color: #d23118;">&nbsp;</div>
-                        <div class="entry" style="background-color: #2a84c9;">&nbsp;</div>
-                        <div class="entry" style="background-color: #000;">&nbsp;</div>
-                        <div class="entry" style="background-color: #d1d1d1;">&nbsp;</div>
-                        <div class="spacer"></div>
-                    </div>
                     <div class="quantity-selector detail-info-entry">
                         <div class="detail-info-entry-title">Quantity</div>
-                        <div class="entry number-minus">&nbsp;</div>
-                        <div class="entry number">10</div>
-                        <div class="entry number-plus">&nbsp;</div>
+                        <input type="number" style="font-size: 20px;width: 80px;border-radius: 100px" name="qty" value="<?php  if (isset($_SESSION['Cart'][$result->id])){echo $_SESSION["Cart"][$result->id]['quantity'];}else{echo 1;}
+
+                            ?>">
                     </div>
                     <div class="detail-info-entry">
-                        <a class="button style-10">Add to cart</a>
+                        <button class="button style-10" name="id" value="<?php echo $result->id ?>" >Add to cart</button>
                         <a class="button style-11"><i class="fa fa-heart"></i> Add to Wishlist</a>
                         <div class="clear"></div>
                     </div>
@@ -122,6 +83,7 @@
                         <div class="clear"></div>
                     </div>
                 </div>
+                </form>
             </div>
             <div class="clear visible-xs visible-sm"></div>
             <div class="col-md-4 col-lg-3 information-entry product-sidebar">

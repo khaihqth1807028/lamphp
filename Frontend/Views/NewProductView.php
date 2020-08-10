@@ -1,4 +1,4 @@
-<div class="tabs-entry">
+<div id="newProduct" class="tabs-entry">
     <div class="products-swiper">
         <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-int-slides="2" data-sm-slides="3" data-md-slides="4" data-lg-slides="4" data-add-slides="4">
             <div class="swiper-wrapper">
@@ -11,7 +11,7 @@
                                 <a class="top-line-a left"><i class="fa fa-retweet"></i></a>
                                 <a class="top-line-a right"><i class="fa fa-heart"></i></a>
                                 <div class="bottom-line">
-                                    <a class="bottom-line-a"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                    <a class="bottom-line-a" href="index.php?controller=Cart&action=AddCart&id=<?php echo  $rows->id ?>&return=New"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                 </div>
                             </div>
                             <a class="title" href="index.php?controller=Products&action=ProductDetail&id=<?php echo $rows->id ?>"><?php echo $rows->name?></a>

@@ -72,86 +72,30 @@
             <div class="col-md-3 col-md-pull-9 col-sm-4 col-sm-pull-8 blog-sidebar">
                 <div class="information-blocks categories-border-wrapper">
                     <div class="block-title size-3">Categories</div>
-                    <div class="accordeon">
-                        <div class="accordeon-title">Bags &amp; Accessories</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
+                    <?php
+                    $listCate=$this->listLeftCate();
+                    foreach ($listCate as $item):
+                        ?>
+                        <div class="accordeon">
+                            <div class="accordeon-title">
+
+                                <a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $item->id ?>"><?php echo $item->name ?></a>
+
+
+                            </div>
+                            <div class="accordeon-entry">
+                                <div class="article-container style-1">
+                                    <ul>
+                                        <?php $listCateSub = $this->listLeftCateSub($item->id);
+                                        foreach ($listCateSub as $itemSub):
+                                            ?>
+                                            <li><a href="index.php?controller=Products&action=ProductCategory&category_id=<?php echo $itemSub->id ?>"><?php echo $itemSub->name ?></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="accordeon-title">Man's Products</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Woman's Products</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Top Brands</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Special Offer</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordeon-title">Leather's Products</div>
-                        <div class="accordeon-entry">
-                            <div class="article-container style-1">
-                                <ul>
-                                    <li><a href="#">Bags &amp; Accessories</a></li>
-                                    <li><a href="#">Man's Products</a></li>
-                                    <li><a href="#">Woman's Products</a></li>
-                                    <li><a href="#">Top Brands</a></li>
-                                    <li><a href="#">Special Offer</a></li>
-                                    <li><a href="#">Leather's Products</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="information-blocks">
@@ -187,34 +131,22 @@
                 <div class="information-blocks">
                     <div class="block-title size-2">Sort by brands</div>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
+                            <?php $listPara =$this->listParameter() ;
+                            foreach($listPara as $itemPara ):
+                            ?>
+
+                            <h1 style="font-size: 20px;background-color: black;color: white;" ><?php echo $itemPara->name ?></h1>
+
+                            <?php $listParaSub = $this->listParameterSub($itemPara->id);
+                            foreach($listParaSub as $itemParaSub ):
+                            ?>
                             <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Armani
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Bershka Co
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Nelly.com
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Zigzag Inc
-                            </label>
+                                <input onchange="location.href='index.php?controller=Products&action=SearchPara&parameterId=<?php echo $itemParaSub->id ?>'"  name="para_id" type="checkbox" /> <span class="check"></span><?php echo $itemParaSub->name ?>
+                            <?php endforeach; ?>
+                                <?php endforeach; ?>
                         </div>
-                        <div class="col-xs-6">
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Armani
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Bershka Co
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Nelly.com
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Zigzag Inc
-                            </label>
-                        </div>
+
                     </div>
                 </div>
 

@@ -329,11 +329,15 @@
                     </a>
 
                 </li>
+
                 <li class="treeview">
-                    <a href="">
-
+                    <a>
                         <a href="index.php?controller=RycyleBin&action=index">Recycle Bin</a>
-
+                        </a>
+                </li>
+                <li class="treeview">
+                    <a>
+                        <a href="index.php?controller=Order&action=ListOrder">Orders</a>
                     </a>
 
                 </li>

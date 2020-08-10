@@ -36,7 +36,14 @@
                     <div class="right-entries">
                         <a class="header-functionality-entry open-search-popup" href="#"><i class="fa fa-search"></i><span>Search</span></a>
                         <a class="header-functionality-entry" href="#"><i class="fa fa-copy"></i><span>Compare</span></a>
-                        <a class="header-functionality-entry" href="#"><i class="fa fa-heart-o"></i><span>Wishlist</span></a>
+                        <?php
+                        if (isset($_SESSION['account'])==false){?>
+                        <a class="header-functionality-entry" href="index.php?controller=Account&action=RegisterForm"><i class="fa fa-heart-o"></i><span>Đăng kí</span></a>
+                        <?php } elseif(isset($_SESSION['account'])==true){ ?>
+                            <a class="header-functionality-entry" href="index.php?controller=Account&action=Profile"><i class="fa fa-heart-o"></i><span>Profile</span></a>
+
+                  <?php     } ?>
+
                         <a class="header-functionality-entry open-cart-popup" href="#"><i class="fa fa-shopping-cart"></i><span>My Cart</span> <b>$255,99</b></a>
                     </div>
 

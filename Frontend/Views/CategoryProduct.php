@@ -97,23 +97,34 @@
                         <?php endfor; ?>
                     </ul></div>
             </div>
+
             <div class="col-md-3 col-md-pull-9 col-sm-4 col-sm-pull-8 blog-sidebar">
                 <div class="information-blocks categories-border-wrapper">
                     <div class="block-title size-3">Categories</div>
+                    <?php
+                    $listCate=$this->listLeftCate();
+                    foreach ($listCate as $item):
+                    ?>
                     <div class="accordeon">
-                        <div class="accordeon-title"></div>
+                        <div class="accordeon-title">
+
+                                <a href="index.php?controller=Products&action=CategoryProduct&category_id=<?php echo $item->id ?>"><?php echo $item->name ?></a>
+
+
+                        </div>
                         <div class="accordeon-entry">
                             <div class="article-container style-1">
                                 <ul>
-                                  <?php
-                                  include_once "Controller/LeftCateController.php";
-                                  $obj = new LeftCateController();
-                                  $obj->listLeftCate();
-                                  ?>
+<?php $listCateSub = $this->listLeftCateSub($item->id);
+foreach ($listCateSub as $itemSub):
+?>
+                                    <li><a href="index.php?controller=Products&action=ProductCategory&category_id=<?php echo $itemSub->id ?>"><?php echo $itemSub->name ?></a></li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="information-blocks">

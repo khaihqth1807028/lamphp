@@ -240,6 +240,22 @@ class ProductsModel{
         $resul= $query->fetch();
         return $resul;
     }
+    public function listLeftCateSub($id){
+
+        $conn = Connection::getInstall();
+        $query= $conn->query("select * from categories where status=1 && parent_id=$id");
+        $resul= $query->fetchAll();
+        return $resul;
+
+    }
+    public function listLeftCate(){
+
+        $conn = Connection::getInstall();
+        $query= $conn->query("select * from categories where status=1 && parent_id=0");
+        $resul= $query->fetchAll();
+        return $resul;
+
+    }
     public function categoriesNameDetailParent($category_id){
         $conn = Connection::getInstall();
         $query = $conn->query("select * from categories where id in(select parent_id from categories where id=$category_id)");
@@ -251,6 +267,33 @@ class ProductsModel{
         $query = $conn->query("select * from categories where id = $category_id");
         $resul= $query->fetch();
         return $resul;
+    }
+
+    public function listParameterSub($id){
+        $conn = Connection::getInstall();
+        $query = $conn->query("select * from parameters where parent_id = $id");
+        $resul = $query->fetchAll();
+        return $resul;
+    }
+    public function listParameter(){
+        $conn = Connection::getInstall();
+        $query = $conn->query("select * from parameters where parent_id = 0");
+        $resul = $query->fetchAll();
+        return $resul;
+    }
+    public function ProductParameter(){
+        $para_id=isset($_GET['parameterId'])? $_GET['parameterId'] :"";
+
+        $conn = Connection::getInstall();
+        $query = $conn->query("select * from products where  id in (select product_id from product_parameters where parameter_id=$para_id)");
+        $resul = $query->fetchAll();
+        return $resul;
+    }
+    public function totalRecordProductParameter($para_id){
+        $conn= Connection::getInstall();
+        $query= $conn->query("select id from products where id in (select product_id from product_parameters where parameter_id=$para_id)");
+    $resul = $query->rowCount();
+    return $resul;
     }
 }
 

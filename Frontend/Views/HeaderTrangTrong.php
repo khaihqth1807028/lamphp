@@ -72,17 +72,27 @@
             </div>
 
 
+<!---->
+<!--            <div class="header-top-entry increase-icon-responsive">-->
+                <?php if (isset($_SESSION['account'])==false){ ?>
+                    <div class="header-top-entry">
+                        <div class="title">Setting <i class="fa fa-caret-down"></i></div>
+                        <div class="list">
+                            <a class="list-entry" href="index.php?controller=Account&action=RegisterForm">Register</a>
+                            <a class="list-entry" href="index.php?controller=Account&action=Login">Login</a>
+                        </div>
+                    </div>
+                <?php }else{ ?>
+                    <div class="header-top-entry">
+                        <div class="title"><img alt="" src="img/flag-lang-1.png">My Account<i class="fa fa-caret-down"></i></div>
+                        <div class="list">
+                            <a class="list-entry" href="index.php?controller=Account&action=Profile"><img alt="" src="img/flag-lang-2.png">Profile</a>
+                            <a class="list-entry" href="index.php?controller=Account&action=Logout"><img alt="" src="img/flag-lang-3.png">Logout</a>
+                        </div>
+                    </div>
+                <?php } ?>
+<!--            </div>-->
 
-            <div class="header-top-entry increase-icon-responsive">
-                <div class="title"><i class="fa fa-user"></i> <span>My Account</span></div>
-            </div>
-            <div class="header-top-entry">
-                <div class="title"><img alt="" src="img/flag-lang-1.png">English<i class="fa fa-caret-down"></i></div>
-                <div class="list">
-                    <a class="list-entry" href="#"><img alt="" src="img/flag-lang-2.png">French</a>
-                    <a class="list-entry" href="#"><img alt="" src="img/flag-lang-3.png">Ukrainian</a>
-                </div>
-            </div>
             <div class="header-top-entry">
                 <div class="title">$ USD <i class="fa fa-caret-down"></i></div>
                 <div class="list">
@@ -95,7 +105,21 @@
         <div class="line-entry">
             <a href="#" class="header-functionality-entry"><i class="fa fa-copy"></i><span>Compare</span></a>
             <a href="#" class="header-functionality-entry"><i class="fa fa-heart-o"></i><span>Wishlist</span></a>
-            <a href="#" class="header-functionality-entry open-cart-popup"><i class="fa fa-shopping-cart"></i><span>My Cart</span> <b>$255,99</b></a>
+            <a href="index.php?controller=Cart&action=CartList" class="header-functionality-entry "><i class="fa fa-shopping-cart"></i><span>My Cart</span> <b>
+                 <?php
+                 $total =0;
+                 if (isset($_SESSION['Cart']) && $_SESSION['Cart']!=null){
+                     foreach ($_SESSION['Cart'] as $list){
+                       $total += $list['quantity'];
+                     }
+                     echo $total;
+
+                 }else{
+                     echo 0;
+                 }
+                 ?>
+
+                    </b></a>
         </div>
     </div>
 </div>

@@ -1,35 +1,3 @@
-<p>Choose your vechicle:</p>
-<div>
-    <input type="checkbox" id="bike" name="vechicle" value="bike">
-    <label for="bike">Bike</label>
-</div>
-<div>
-    <input type="checkbox" id="car" name="vechicle" value="car">
-    <label for="car">Car</label>
-</div>
-<div>
-    <input type="checkbox" id="select-all">
-    <label for="car">Select All</label>
-</div>
-<script>
-
-    $(document).ready(function() {
-        alert(1);
-        $('#select-all').click(function() {
-
-            $('input[type="checkbox"]').prop('checked', this.checked);
-        })
-    });
-</script>
-
-
-
-
-
-
-
-
-
 
 <h1><a href="index.php?controller=Products&action=create">Thêm Product</a></h1>
 <form method="post" action="index.php?controller=Products&action=checkbox">
@@ -66,7 +34,7 @@
 <?php endif ?>
            </td>
 <!--           <td>--><?php //echo $rows->password; ?><!--</td>-->
-           <td style="width: 150px"><?php echo $rows->name; ?></td>
+           <td style="width: 150px"><?php echo $rows->name ?></td>
            <td style="max-width: 80px"><?php echo $this->getCategoryParent_id($rows->category_id) ?> (<?php echo $this->getCategory($rows->category_id); ?>)</td>
 
             <td style="max-width: 40px">  <?php if($rows->hot==1): ?><span class="fa fa-check"></span><?php endif; ?>

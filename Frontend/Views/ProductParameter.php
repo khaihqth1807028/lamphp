@@ -11,14 +11,14 @@
 
                 <div class="row shop-grid grid-view">
 
-                    <?php  foreach($listRecord as $item): ?>
+                    <?php  foreach($listProductParameter as $item): ?>
                         <div class="col-md-3 col-sm-4 shop-grid-item">
                             <div class="product-slide-entry shift-image">
                                 <div class="product-image">
                                     <img src="../Assets/Upload/Products/<?php echo $item->photo?>" alt="" />
                                     <img src="../Assets/Upload/Products/<?php echo $item->photo?>" alt="" />
                                     <div class="bottom-line left-attached">
-                                        <a href="index.php?controller=Cart&action=AddCart&id=<?php echo $item->id ?>&return=ProductSearch" class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-heart"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-retweet"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-expand"></i></a>
@@ -42,7 +42,7 @@
                                     <div class="current"><?php echo $newPrice = $item->price-($item->price*$item->discount/100)?></div>
                                 </div>
                                 <div class="list-buttons">
-                                    <a href="index.php?controller=Cart&action=AddCart&id=<?php echo $item->id ?>" class="button style-10">Add to cart</a>
+                                    <a class="button style-10">Add to cart</a>
                                     <a class="button style-11"><i class="fa fa-heart"></i> Add to Wishlist</a>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                 <div class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x69;&#x6E;&#x65;&#x72;"><ul class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;">
                         <li class="disabled"><a href="#">Trang</a></li>
                         <?php for($i = 1; $i <= $numPage; $i++): ?>
-                            <li><a href="index.php?controller=Products&action=Search&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                            <li><a href="index.php?controller=Products&action=SearchPara&paramerId=<?php echo $_GET['paramerId'] ?>&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
                         <?php endfor; ?>
                     </ul></div>
             </div>
@@ -131,34 +131,22 @@
                 <div class="information-blocks">
                     <div class="block-title size-2">Sort by brands</div>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
+                            <?php $listPara =$this->listParameter() ;
+                            foreach($listPara as $itemPara ):
+                            ?>
+
+                            <h1 style="font-size: 20px;background-color: black;color: white;" ><?php echo $itemPara->name ?></h1>
+
+                            <?php $listParaSub = $this->listParameterSub($itemPara->id);
+                            foreach($listParaSub as $itemParaSub ):
+                            ?>
                             <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Armani
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Bershka Co
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Nelly.com
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Zigzag Inc
-                            </label>
+                                <input onchange="location.href='index.php?controller=Products&action=SearchPara&parameterId=<?php echo $itemParaSub->id ?>'"  name="para_id" type="checkbox" /> <span class="check"></span><?php echo $itemParaSub->name ?>
+                                <?php endforeach; ?>
+                                <?php endforeach; ?>
                         </div>
-                        <div class="col-xs-6">
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Armani
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Bershka Co
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Nelly.com
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Zigzag Inc
-                            </label>
-                        </div>
+
                     </div>
                 </div>
 

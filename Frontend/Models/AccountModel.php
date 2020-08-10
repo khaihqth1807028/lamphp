@@ -34,10 +34,9 @@ public function checkoutModel(){
     }
     //---
     //---
-    //insert ban ghi vao orders, lay order_id vua moi insert
     $query = $conn->prepare("insert into orders set customer_id=:customer_id, date=now(), price=:totalPrice");
     $query->execute(array("customer_id"=>$customer_id,"totalPrice"=>$totalPrice));
- echo   $order_id = $conn->lastInsertId();
+    $order_id = $conn->lastInsertId();
 
 
     //---

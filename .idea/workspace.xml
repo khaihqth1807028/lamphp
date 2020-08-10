@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84eca640-9b18-4e68-bcbd-029117e923c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/Models/OrderModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Views/FormCheckout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Views/ProductParameter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Views/ProfileCustomerView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Models/ProductsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Models/ProductsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Views/Layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Views/Layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Views/ProductView.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Views/ProductView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Controllers/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Controllers/LeftCateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Controllers/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Models/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Models/AccountModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Models/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Models/CartModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Models/LeftCateModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Models/ProductsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Models/ProductsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/AccountCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/AccountCreate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/AccountLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/AccountLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/CategoryProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/Header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/HeaderTrangTrong.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/HeaderTrangTrong.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/HotProductView.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/HotProductView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/NewProductView.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/NewProductView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/ProductDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/ProductDetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/ProductsCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/ProductsCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/ProductsDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Views/OrderView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/ProductsSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/ProductsSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/ProductsSearchHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/ProductsSearchHome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/SaleProductView.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/SaleProductView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/check.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Frontend/Models/AccountModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="221">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -423,18 +390,18 @@
       <workItem from="1596898579492" duration="1372000" />
       <workItem from="1596908157601" duration="4149000" />
       <workItem from="1596955555759" duration="5414000" />
-      <workItem from="1597068159934" duration="5649000" />
+      <workItem from="1597068159934" duration="5931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="396933000" />
+    <option name="totallyTimeSpent" value="397215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23967612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23967612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -447,7 +414,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -797,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/Models/AccountModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="221">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>

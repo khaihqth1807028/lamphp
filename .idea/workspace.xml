@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84eca640-9b18-4e68-bcbd-029117e923c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Frontend/Models/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Models/AccountModel.php" afterDir="false" />
-    </list>
+    <list default="true" id="84eca640-9b18-4e68-bcbd-029117e923c2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -390,16 +388,15 @@
       <workItem from="1596898579492" duration="1372000" />
       <workItem from="1596908157601" duration="4149000" />
       <workItem from="1596955555759" duration="5414000" />
-      <workItem from="1597068159934" duration="5931000" />
+      <workItem from="1597068159934" duration="6174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397215000" />
+    <option name="totallyTimeSpent" value="397458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23967612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

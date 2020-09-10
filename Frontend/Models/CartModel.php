@@ -1,7 +1,5 @@
 
 <?php
-
-
     class CartModel{
         public function listCart(){
             $conn= Connection::getInstall();

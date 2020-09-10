@@ -1,5 +1,5 @@
 <li class="simple-list">
-    <a href="">Products</a><i class="fa fa-chevron-down"></i>
+    <a href="index.php?controller=Products&action=Search&key=">Products</a><i class="fa fa-chevron-down"></i>
     <div class="submenu">
         <ul class="simple-menu-list-column">
 

@@ -2,8 +2,8 @@
         <div class="content-push">
 
             <div class="breadcrumb-box">
-                <a href="#">Home</a>
-                <a href="#">Register Form</a>
+                <a href="index.php">Home</a>
+                <a href="index.php?controller=Account&action=RegisterForm">Register Form</a>
             </div>
 
             <div class="information-blocks">
@@ -16,15 +16,15 @@
                             </div>
                             <form method="post" action="index.php?controller=Account&action=RegisterPost">
                                 <label>Name</label>
-                                <input class="simple-field" name="name" type="text" placeholder="Name" value="" />
+                                <input required class="simple-field" name="name" type="text" placeholder="Name" value="" />
                                 <label>Email Address</label>
-                                <input class="simple-field" name="email" type="text" placeholder="Email" value="" />
+                                <input required class="simple-field" name="email" type="text" placeholder="Email" value="" />
                                 <label>Password</label>
-                                <input class="simple-field" name="password" type="password" placeholder="Pass" value="" />
+                                <input required class="simple-field" name="password" type="password" placeholder="Pass" value="" />
                                 <label>Phone</label>
-                                <input class="simple-field" name="phone" type="number" placeholder="Phone" value="" />
+                                <input required class="simple-field" name="phone" type="number" placeholder="Phone" value="" />
                                 <label>Address</label>
-                                <input class="simple-field" name="address" type="text" placeholder="Address" value="" />
+                                <input required class="simple-field" name="address" type="text" placeholder="Address" value="" />
                                 <div class="button style-10">Register Page<input type="submit" value="" /></div>
                             </form>
                         </div>
@@ -32,150 +32,10 @@
                     <div class="col-sm-6 information-entry">
                         <div class="login-box">
                             <div class="article-container style-1">
-                                <h3>New Customers</h3>
+                                <h3>Login</h3>
                                 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
                             </div>
-                            <a class="button style-12">Register Account</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <div class="information-blocks">
-                <div class="row">
-                    <div class="col-sm-4 information-entry">
-                        <h3 class="block-title inline-product-column-title">Featured products</h3>
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-1.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-2.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-3.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 information-entry">
-                        <h3 class="block-title inline-product-column-title">Featured products</h3>
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-1.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-2.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-3.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 information-entry">
-                        <h3 class="block-title inline-product-column-title">Featured products</h3>
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-1.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-2.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="inline-product-entry">
-                            <a href="#" class="image"><img alt="" src="img/product-image-inline-3.jpg"></a>
-                            <div class="content">
-                                <div class="cell-view">
-                                    <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                                    <div class="price">
-                                        <div class="prev">$199,99</div>
-                                        <div class="current">$119,99</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
+                            <a href="index.php?controller=Account&action=Login" class="button style-12">Login Account</a>
                         </div>
                     </div>
                 </div>

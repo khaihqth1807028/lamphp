@@ -5,7 +5,7 @@ include "Models/ProductsModel.php";
 class ProductsController extends ProductsModel{
 
     public function ProductCategory(){
-        $recordPerPage = 2;
+        $recordPerPage = 8;
         $category_id =isset($_GET['category_id'])? $_GET['category_id'] : "";
         //tinh so trang
         $numPage = ceil($this->totalRecord($category_id)/$recordPerPage);
@@ -16,7 +16,7 @@ class ProductsController extends ProductsModel{
     }
 
     public function CategoryProduct(){
-        $recordPerPage = 2;
+        $recordPerPage = 8;
         $category_id =isset($_GET['category_id'])? $_GET['category_id'] : "";
         //tinh so trang
         $numPage = ceil($this->totalRecordCate($category_id)/$recordPerPage);
@@ -26,7 +26,7 @@ class ProductsController extends ProductsModel{
         include "Views/CategoryProduct.php";
     }
     public function SearchPrice(){
-        $recordPerPage = 6;
+        $recordPerPage = 8;
         //tinh so trang
         $numPage = ceil($this->totalRecordSearchPrice()/$recordPerPage);
         //goi ham ModelRead tu class ProductsModel de lay ket qua
@@ -35,7 +35,7 @@ class ProductsController extends ProductsModel{
         include "Views/ProductsSearch.php";
     }
     public function Search(){
-        $recordPerPage = 6;
+        $recordPerPage = 8;
         //tinh so trang
         $numPage = ceil($this->totalRecordSearch()/$recordPerPage);
         //goi ham ModelRead tu class ProductsModel de lay ket qua
@@ -51,7 +51,7 @@ class ProductsController extends ProductsModel{
         include "Views/ProductDetail.php";
     }
 public function SearchPara(){
-    $recordPerPage = 6;
+    $recordPerPage = 4;
     $para_id=isset($_GET['parameterId'])? $_GET['parameterId'] :"";
     //tinh so trang
     $numPage = ceil($this->totalRecordProductParameter($para_id)/$recordPerPage);

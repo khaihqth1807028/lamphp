@@ -20,12 +20,11 @@ class AccountController extends AccountModel
     public function Checkout()
     {
         if (isset($_SESSION['account']) &&  $_SESSION['Cart'] != null) {
-
             $acc = json_decode(json_encode($_SESSION['account']),true);
-           echo "<script>alert('Bạn đã thanh toán thành công')</script>";
-           $this->checkoutModel();
-          //  unset($_SESSION["Cart"]);
-          //  echo "<script>location.href='index.php?controller=Cart&action=CartList'</script>";
+           $this->checkoutModel1();
+            echo "<script>alert('Bạn đã thanh toán thành công')</script>";
+            unset($_SESSION["Cart"]);
+            echo "<script>location.href='index.php?controller=Cart&action=CartList'</script>";
         } elseif (!isset($_SESSION['Cart']) || $_SESSION['Cart']== null) {
             echo "<script>alert('Bạn không có sản phẩm nào , check out thì có tác dụng j , hãy mua j đi ')</script>";
             echo "<script>location.href='index.php?controller=Cart&action=CartList'</script>";

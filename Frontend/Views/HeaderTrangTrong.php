@@ -251,22 +251,6 @@
                             <img class="submenu-background" src="img/product-menu-8.jpg" alt="" />
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="submenu-list-title"><a href="blog.html">Blog <span class="menu-label blue">new</span></a><span class="toggle-list-button"></span></div>
-                                    <ul class="list-type-1 toggle-list-container">
-                                        <li><a href="blog.html"><i class="fa fa-angle-right"></i>Blog Default</a></li>
-                                        <li><a href="blog-grid.html"><i class="fa fa-angle-right"></i>Blog Grid</a></li>
-                                        <li><a href="blog-timeline.html"><i class="fa fa-angle-right"></i>Blog Timeline</a></li>
-                                        <li><a href="blog-list.html"><i class="fa fa-angle-right"></i>Blog List</a></li>
-                                        <li><a href="blog-biggrid.html"><i class="fa fa-angle-right"></i>Blog Big Grid</a></li>
-                                        <li><a href="blog-detail.html"><i class="fa fa-angle-right"></i>Blog Detail</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="submenu-links-line">
-                            <div class="submenu-links-line-container">
-                                <div class="cell-view">
-                                    <div class="line-links"><b>Quicklinks:</b>  <a href="shop.html">Blazers</a>, <a href="shop.html">Jackets</a>, <a href="shop.html">Shoes</a>, <a href="shop.html">Bags</a></div>
                                 </div>
                             </div>
                         </div>
@@ -274,29 +258,9 @@
                 </li>
                 <li class="simple-list">
                     <a>More</a><i class="fa fa-chevron-down"></i>
-                    <div class="submenu">
-                        <ul class="simple-menu-list-column">
-                            <li><a href="login.html"><i class="fa fa-angle-right"></i>Login</a></li>
-                            <li><a href="error.html"><i class="fa fa-angle-right"></i>Error</a></li>
-                            <li><a href="faq.html"><i class="fa fa-angle-right"></i>Faq</a></li>
-                            <li><a href="compare.html"><i class="fa fa-angle-right"></i>Compare</a></li>
-                            <li><a href="wishlist.html"><i class="fa fa-angle-right"></i>Wishlist</a></li>
-                            <li><a href="shortcodes.html"><i class="fa fa-angle-right"></i>Shortcodes</a></li>
-                            <li><a href="elements-headers.html"><i class="fa fa-angle-right"></i>Elements - Headers</a></li>
-                            <li><a href="elements-footers.html"><i class="fa fa-angle-right"></i>Elements - Footers</a></li>
-                            <li><a href="elements-breadcrumbs.html"><i class="fa fa-angle-right"></i>Elements - Breadcrumbs</a></li>
-                        </ul>
-                    </div>
                 </li>
             </ul>
 
-            <ul>
-                <li><a href="http://themeforest.net/item/mango-responsive-ecommerce-html5-template/12050763?ref=8theme">Buy this theme</a></li>
-                <li class="fixed-header-visible">
-                    <a class="fixed-header-square-button open-cart-popup"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="fixed-header-square-button open-search-popup"><i class="fa fa-search"></i></a>
-                </li>
-            </ul>
             <div class="clear"></div>
 
             <a class="fixed-header-visible additional-header-logo"><img src="img/logo-9.png" alt=""/></a>

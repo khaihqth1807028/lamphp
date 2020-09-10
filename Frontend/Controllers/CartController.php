@@ -13,6 +13,7 @@ public function AddCart(){
     $idPost= isset($_POST['id'])?$_POST['id']:"";
     echo $qty=isset($_POST['qty'])?$_POST['qty']:"";
     $productId=isset($_GET['id'])?$_GET['id']:"";
+   echo  $category_id= isset($_GET['category_id'])?$_GET['category_id']:"";
     foreach ($arr as $value){
 
         $newProduct[$value['id']] = $value;
@@ -64,10 +65,10 @@ public function AddCart(){
         }
     }
 
-
     echo "<script>alert('Bạn đã thêm vào giỏ hàng')</script>";
 switch ($redirec){
-    case " New":
+    case "New":
+
         echo "<script>location.href='index.php?#newProduct'</script>";
         break;
         case "Hot";
@@ -81,6 +82,12 @@ switch ($redirec){
         break;
     case "":
         echo "<script>location.href='index.php?controller=products&action=ProductDetail&id=$productId'</script>";
+        break;
+    case "CategoryProduct":
+        echo "<script>location.href='index.php?controller=products&action=CategoryProduct&category_id=$category_id'</script>";
+        break;
+    case "ProductCategory":
+        echo "<script>location.href='index.php?controller=products&action=ProductCategory&category_id=$category_id'</script>";
         break;
 }
 

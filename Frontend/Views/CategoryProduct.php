@@ -14,11 +14,10 @@
             <div class="col-md-9 col-md-push-3 col-sm-8 col-sm-push-4">
                 <div class="page-selector">
                     <div class="pages-box hidden-xs">
-                        <a href="#" class="square-button active">1</a>
-                        <a href="#" class="square-button">2</a>
-                        <a href="#" class="square-button">3</a>
-                        <div class="divider">...</div>
-                        <a href="#" class="square-button"><i class="fa fa-angle-right"></i></a>
+
+                        <a class="square-button active" >1</a>
+                        <a class="square-button " >2</a>
+                        <a class="square-button " >...</a>
                     </div>
                     <div class="shop-grid-controls">
                         <div class="entry">
@@ -62,7 +61,7 @@
                                     <img src="../Assets/Upload/Products/<?php echo $item->photo?>" alt="" />
                                     <img src="../Assets/Upload/Products/<?php echo $item->photo?>" alt="" />
                                     <div class="bottom-line left-attached">
-                                        <a class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
+                                        <a href="index.php?controller=Cart&action=AddCart&id=<?php echo $item->id ?>&category_id=<?php echo isset($_GET['category_id'])?$_GET['category_id']:"" ?>&return=CategoryProduct" class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-heart"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-retweet"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-expand"></i></a>
@@ -126,9 +125,8 @@ foreach ($listCateSub as $itemSub):
                     </div>
                     <?php endforeach; ?>
                 </div>
-
                 <div class="information-blocks">
-                    <div class="block-title size-2">Sort Products by sizes</div>
+                    <div class="block-title size-2">Sort by sizes</div>
                     <div class="range-wrapper">
                         <!--                        <form action="index.php?controller=Products&action=Search&price=--><?php //echo $price=isset($_POST['price'])?$_POST['price'] : "" ?><!--" method="post">-->
 
@@ -144,205 +142,29 @@ foreach ($listCateSub as $itemSub):
                         <!--                        </form>     -->
                     </div>
                 </div>
-
                 <div class="information-blocks">
-                    <div class="block-title size-2">Sort by sizes</div>
-                    <div class="size-selector">
-                        <div class="entry active">xs</div>
-                        <div class="entry">s</div>
-                        <div class="entry">m</div>
-                        <div class="entry">l</div>
-                        <div class="entry">xl</div>
-                        <div class="spacer"></div>
-                    </div>
-                </div>
-
-                <div class="information-blocks">
-                    <div class="block-title size-2">Sort by brands</div>
+                    <div class="block-title size-2">Sort by parameter</div>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
+                            <?php $listPara =$this->listParameter() ;
+                            foreach($listPara as $itemPara ):
+                            ?>
+
+                            <h1 style="font-size: 20px;background-color: black;color: white;" ><?php echo $itemPara->name ?></h1>
+
+                            <?php $listParaSub = $this->listParameterSub($itemPara->id);
+                            foreach($listParaSub as $itemParaSub ):
+                            ?>
                             <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Armani
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Bershka Co
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Nelly.com
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Zigzag Inc
-                            </label>
+                                <input onchange="location.href='index.php?controller=Products&action=SearchPara&parameterId=<?php echo $itemParaSub->id ?>'"  name="para_id" type="checkbox" /> <span class="check"></span><?php echo $itemParaSub->name ?>
+                                <?php endforeach; ?>
+                                <?php endforeach; ?>
                         </div>
-                        <div class="col-xs-6">
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Armani
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Bershka Co
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Nelly.com
-                            </label>
-                            <label class="checkbox-entry">
-                                <input type="checkbox" /> <span class="check"></span> Zigzag Inc
-                            </label>
-                        </div>
+
                     </div>
                 </div>
-
-                <div class="information-blocks">
-                    <div class="block-title size-2">Sort by colours</div>
-                    <div class="color-selector detail-info-entry">
-                        <input style="height: 15px;background: green;" type="button" value="XANH" onclick="SetColor('green')">
-                        <input style="height: 15px;background: red;" type="button" value="Đỏ" onclick="SetColor('red')">
-                        <input style="height: 15px;background: purple;" type="button" value="Tím" onclick="SetColor('purple')">
-                        <input style="height: 15px;background: yellow;" type="button" value="Vàng" onclick="SetColor('yellow')">
-                        <div class="spacer"></div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
-
-    <div class="information-blocks">
-        <div class="row">
-            <div class="col-sm-4 information-entry">
-                <h3 class="block-title inline-product-column-title">Featured products</h3>
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-1.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-2.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-3.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="col-sm-4 information-entry">
-                <h3 class="block-title inline-product-column-title">Featured products</h3>
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-1.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-2.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-3.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="col-sm-4 information-entry">
-                <h3 class="block-title inline-product-column-title">Featured products</h3>
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-1.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-2.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="inline-product-entry">
-                    <a href="#" class="image"><img alt="" src="img/product-image-inline-3.jpg"></a>
-                    <div class="content">
-                        <div class="cell-view">
-                            <a href="#" class="title">Ladies Pullover Batwing Sleeve Zigzag</a>
-                            <div class="price">
-                                <div class="prev">$199,99</div>
-                                <div class="current">$119,99</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <div class="footer-wrapper style-10">
         <footer class="type-1">

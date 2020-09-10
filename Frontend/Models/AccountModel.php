@@ -23,8 +23,9 @@
             $query = $conn->prepare("insert into customers set name=:name, password=:password ,email=:email, phone=:phone,address=:address");
             $query->execute(array("name"=>$name,"password"=>$password,"email"=>$email,"phone"=>$phone,"address"=>$address));
         }
-public function checkoutModel(){
+public function checkoutModel1(){
     $conn = Connection::getInstall();
+
     //---
     $customer_id = $_SESSION["account"]->Id;
     $totalPrice=0;
@@ -34,16 +35,16 @@ public function checkoutModel(){
     }
     //---
     //---
-    $query = $conn->prepare("insert into orders set customer_id=:customer_id, date=now(), price=:totalPrice");
-    $query->execute(array("customer_id"=>$customer_id,"totalPrice"=>$totalPrice));
-    $order_id = $conn->lastInsertId();
+    $query = $conn->query("insert into orders set customer_id=$customer_id,date=now() ,price=$totalPrice");
 
+   echo $order_id = $conn->lastInsertId();
 
+echo $customer_id;
     //---
     //duyet cac ban ghi trong session array de insert vao orderdetails
     foreach($_SESSION["Cart"] as $product){
         $query = $conn->prepare("insert into orderdetails set order_id=:order_id, product_id=:product_id, price=:price, quantity=:quantity ");
-        $query->execute(array("order_id"=>$order_id,"product_id"=>$product["id"],"price"=>$product["price"],"quantity"=>$product["quantity"]));
+        $query->execute(array("order_id"=>$order_id,"product_id"=>$product["id"],"price"=>$product["totalPrice"],"quantity"=>$product["quantity"]));
     }
     echo "<pre>";
     print_r($_SESSION['Cart']);

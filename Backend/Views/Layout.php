@@ -11,8 +11,10 @@
     <!-- font Awesome -->
     <link href="../Assets/Backend/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
+
     <link href="../Assets/Backend/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="../Assets/Backend/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck for checkboxes and radio inputs -->
@@ -301,35 +303,11 @@
             </div>
             <!-- search form -->
             <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                    <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                </div>
+
             </form>
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
-                <li class="active">
-                    <a href="index.html">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="pages/widgets.html">
-                        <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-
-                </li>
-
                 <li class="treeview">
                     <a>
                         <a href="index.php?controller=RycyleBin&action=index">Recycle Bin</a>
@@ -337,7 +315,7 @@
                 </li>
                 <li class="treeview">
                     <a>
-                        <a href="index.php?controller=Order&action=ListOrder">Orders</a>
+                        <a href="index.php?controller=Order&action=ListOrder&Asc=date">Orders</a>
                     </a>
 
                 </li>
@@ -421,50 +399,6 @@
 <!-- iCheck -->
 <script src="../Assets/Backend/jsplugins//iCheck/icheck.min.js" type="text/javascript"></script>
 <!-- Page script -->
-<!--   <script type="text/javascript">
-      $(function() {
-
-          "use strict";
-
-          //iCheck for checkbox and radio inputs
-          $('input[type="checkbox"]').iCheck({
-              checkboxClass: 'icheckbox_minimal-blue',
-              radioClass: 'iradio_minimal-blue'
-          });
-
-          //When unchecking the checkbox
-          $("#check-all").on('ifUnchecked', function(event) {
-              //Uncheck all checkboxes
-              $("input[type='checkbox']", ".table-mailbox").iCheck("uncheck");
-          });
-          //When checking the checkbox
-          $("#check-all").on('ifChecked', function(event) {
-              //Check all checkboxes
-              $("input[type='checkbox']", ".table-mailbox").iCheck("check");
-          });
-          //Handle starring for glyphicon and font awesome
-          $(".fa-star, .fa-star-o, .glyphicon-star, .glyphicon-star-empty").click(function(e) {
-              e.preventDefault();
-              //detect type
-              var glyph = $(this).hasClass("glyphicon");
-              var fa = $(this).hasClass("fa");
-
-              //Switch states
-              if (glyph) {
-                  $(this).toggleClass("glyphicon-star");
-                  $(this).toggleClass("glyphicon-star-empty");
-              }
-
-              if (fa) {
-                  $(this).toggleClass("fa-star");
-                  $(this).toggleClass("fa-star-o");
-              }
-          });
-
-          //Initialize WYSIHTML5 - text editor
-          $("#email_message").wysihtml5();
-      });
-  </script> -->
 
 </body>
 </html>

@@ -18,7 +18,7 @@
                                     <img src="../Assets/Upload/Products/<?php echo $item->photo?>" alt="" />
                                     <img src="../Assets/Upload/Products/<?php echo $item->photo?>" alt="" />
                                     <div class="bottom-line left-attached">
-                                        <a class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
+                                        <a href="index.php?controller=Cart&action=AddCart&id=<?php echo  $item->id ?>" class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-heart"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-retweet"></i></a>
                                         <a class="bottom-line-a square"><i class="fa fa-expand"></i></a>

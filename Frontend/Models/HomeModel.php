@@ -6,7 +6,7 @@ class HomeModel{
 
 public function hotProductModel(){
     $conn = Connection::getInstall();
-    $query= $conn->query("select * from products where status=1 && hot=1 limit 6");
+    $query= $conn->query("select * from products where status=1 && hot=1 ");
     $result=$query->fetchAll();
     return $result;
 }
@@ -19,7 +19,7 @@ public function newProductModel(){
 }
 public function saleProductModel(){
     $conn = Connection::getInstall();
-    $query= $conn->query("select * from products where status=1 && discount >= 50 limit 6");
+    $query= $conn->query("select * from products where status=1 && discount >= 50 ");
     $result=$query->fetchAll();
     return $result;
 }

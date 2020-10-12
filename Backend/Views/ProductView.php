@@ -6,8 +6,8 @@
     <tr>
 
         <th scope="col">
-            <label for="car">Select All</label>
-            <input type="checkbox" id="select-all">
+            <label for="car">Check box</label>
+
         </th>
         <th scope="col">
             <a href="<?php echo $action ?>">Id</a>

@@ -144,7 +144,7 @@ echo $category_id;
 //doc tat ca cac ban ghi
     public function ModelReadParameters($product_id){
         //lay bien ket noi
-        $conn = Connection::getInstance();
+        $conn = Connection::getInstall();
         //thuc hien truy van
         $query = $conn->query("select parameters.name as name, product_parameters.id as id from product_parameters inner join parameters on product_parameters.parameter_id = parameters.id where product_id = $product_id");
         //lay tat cac ket qua tra ve
@@ -156,7 +156,11 @@ echo $category_id;
     public function ModelReadParameterProduct($product_id){
 
        $conn = Connection::getInstall();
-       $query = $conn->query("select parameters.name as name, product_parameters.id as id from product_parameters inner join parameters on product_parameters.parameter_id = parameters.id where product_id = $product_id");
+       $query = $conn->query("select parameters.name as name,
+ product_parameters.id as id
+  from product_parameters inner join parameters 
+  on product_parameters.parameter_id = parameters.id 
+  where product_id = $product_id");
         //lay tat cac ket qua tra ve)
 
         $result = $query->fetchAll();
